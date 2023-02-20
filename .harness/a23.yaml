@@ -1,0 +1,30 @@
+pipeline:
+  name: a23
+  identifier: a23
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  stages:
+    - stage:
+        name: as2
+        identifier: as2
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Shell Script_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "hello1"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
