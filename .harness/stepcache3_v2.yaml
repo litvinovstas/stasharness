@@ -1,0 +1,20 @@
+template:
+  name: step-cache3
+  identifier: stepcache3
+  versionLabel: v2
+  type: Step
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    timeout: 10m
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: echo "test123"
+      environmentVariables: []
+      outputVariables: []
