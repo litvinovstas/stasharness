@@ -1,0 +1,24 @@
+template:
+  name: pipeline-template-2
+  identifier: pipelinetemplate2
+  type: Pipeline
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: a4
+          identifier: a4
+          template:
+            templateRef: stage3
+            versionLabel: v1
+            templateInputs:
+              type: Deployment
+              spec:
+                service:
+                  serviceRef: <+input>
+                  serviceInputs: <+input>
+                environments:
+                  values: <+input>
+  versionLabel: v2
