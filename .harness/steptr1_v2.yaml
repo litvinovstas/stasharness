@@ -1,0 +1,20 @@
+template:
+  name: steptr1
+  identifier: steptr1
+  versionLabel: v2
+  type: Step
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    timeout: 10m
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: echo "hello1"
+      environmentVariables: []
+      outputVariables: []
