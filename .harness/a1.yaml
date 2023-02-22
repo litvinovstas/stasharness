@@ -1,0 +1,27 @@
+template:
+  name: a1
+  identifier: a1
+  versionLabel: v2
+  type: StepGroup
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    stageType: Custom
+    steps:
+      - step:
+          type: ShellScript
+          name: Shell Script_1
+          identifier: ShellScript_1
+          spec:
+            shell: Bash
+            onDelegate: true
+            source:
+              type: Inline
+              spec:
+                script: adasd
+            environmentVariables: []
+            outputVariables: []
+          timeout: 10m
+    delegateSelectors:
+      - qa-stress-delegate
