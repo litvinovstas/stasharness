@@ -1,0 +1,19 @@
+pipeline:
+  name: d n b
+  identifier: d_n_b
+  template:
+    templateRef: PT_Single_Env
+    versionLabel: v1
+    templateInputs:
+      stages:
+        - stage:
+            identifier: Stage_1
+            type: Deployment
+            spec:
+              environment:
+                environmentRef: <+pipeline.stages.Stage_1.variables.envName>
+                infrastructureDefinitions:
+                  - identifier: <+pipeline.stages.Stage_1.variables.infraName>
+  tags: {}
+  projectIdentifier: Ashwin_svc_env
+  orgIdentifier: default
