@@ -6,7 +6,7 @@ template:
   orgIdentifier: NgTriggersOrg
   tags: {}
   spec:
-    timeout: 10m
+    timeout: <+input>
     type: ShellScript
     spec:
       shell: Bash
@@ -14,7 +14,7 @@ template:
       source:
         type: Inline
         spec:
-          script: echo "test123"
+          script: echo "test version v12"
       environmentVariables: []
       outputVariables: []
   versionLabel: v12
