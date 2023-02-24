@@ -1,0 +1,20 @@
+template:
+  name: ea1
+  identifier: ea1
+  versionLabel: v1
+  type: Step
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    timeout: <+input>
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: <+input>
+      environmentVariables: []
+      outputVariables: []
