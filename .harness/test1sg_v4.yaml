@@ -1,0 +1,71 @@
+template:
+  name: test1sg
+  identifier: test1sg
+  type: StepGroup
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    stageType: Deployment
+    steps:
+      - step:
+          type: ShellScript
+          name: Shell Script_1
+          identifier: ShellScript_1
+          spec:
+            shell: Bash
+            onDelegate: true
+            source:
+              type: Inline
+              spec:
+                script: echo "hello 3"
+            environmentVariables: []
+            outputVariables: []
+          timeout: 10m
+      - stepGroup:
+          name: a2
+          identifier: a2
+          steps:
+            - parallel:
+                - step:
+                    type: ShellScript
+                    name: Shell Script_2
+                    identifier: ShellScript_2
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo "test99"
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+                - stepGroup:
+                    name: sg3
+                    identifier: sg3
+                    template:
+                      templateRef: sgt1
+                      versionLabel: v1
+                      templateInputs:
+                        steps:
+                          - step:
+                              identifier: ShellScript_1
+                              type: ShellScript
+                              spec:
+                                source:
+                                  type: Inline
+                                  spec:
+                                    script: <+input>
+                          - step:
+                              identifier: Command_1
+                              type: Command
+                              spec:
+                                commandUnits:
+                                  - identifier: command1
+                                    type: Copy
+                                    spec:
+                                      destinationPath: <+input>
+    delegateSelectors:
+      - ""
+  versionLabel: v4
