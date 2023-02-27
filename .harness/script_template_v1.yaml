@@ -1,0 +1,16 @@
+template:
+  name: script template
+  identifier: script_template
+  versionLabel: v1
+  type: SecretManager
+  projectIdentifier: Ashwin_svc_env
+  orgIdentifier: default
+  tags: {}
+  spec:
+    shell: Bash
+    executionTarget: {}
+    onDelegate: false
+    source:
+      spec:
+        script: ls
+        type: Inline
