@@ -37,8 +37,12 @@ template:
                               - identifier: art1
                                 type: DockerRegistry
                                 spec:
-                                  tag: <+input>
                                   imagePath: <+input>
+                                  tag: <+input>
+              variables:
+                - name: var1
+                  type: String
+                  value: <+input>
       - stage:
           name: use from previou
           identifier: use_from_previou
@@ -51,6 +55,9 @@ template:
                 service:
                   serviceRef: <+input>
                   serviceInputs: <+input>
-                  useFromStage: <+input>
+              variables:
+                - name: var1
+                  type: String
+                  value: <+input>
   identifier: PT_Propagate
   versionLabel: v1
