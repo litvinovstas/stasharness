@@ -1,0 +1,72 @@
+template:
+  name: PT Propagate
+  type: Pipeline
+  projectIdentifier: Ashwin_svc_env
+  orgIdentifier: default
+  spec:
+    stages:
+      - stage:
+          name: Stage 1
+          identifier: Stage_1
+          template:
+            templateRef: svc_use_from_stage
+            versionLabel: v1
+            templateInputs:
+              type: Deployment
+              spec:
+                service:
+                  serviceRef: nginx
+                  serviceInputs:
+                    serviceDefinition:
+                      type: Kubernetes
+                      spec:
+                        variables:
+                          - name: var2
+                            type: String
+                            value: test1
+                          - name: var3
+                            type: String
+                            value: test2
+                          - name: var4
+                            type: String
+                            value: test3
+                        artifacts:
+                          primary:
+                            primaryArtifactRef: art1
+                            sources:
+                              - identifier: art1
+                                type: DockerRegistry
+                                spec:
+                                  imagePath: <+input>
+                                  tag: <+input>
+              variables:
+                - name: var1
+                  type: String
+                  value: <+input>
+      - stage:
+          name: use from previou
+          identifier: use_from_previou
+          template:
+            templateRef: svc_use_from_stage
+            versionLabel: v1
+            templateInputs:
+              type: Deployment
+              spec:
+                service:
+                  serviceRef: <+input>
+                  serviceInputs: <+input>
+              variables:
+                - name: var1
+                  type: String
+                  value: <+input>
+    variables:
+      - name: var2
+        type: String
+        description: ""
+        value: <+input>
+      - name: var3
+        type: String
+        description: ""
+        value: <+input>
+  identifier: PT_Propagate
+  versionLabel: v2
