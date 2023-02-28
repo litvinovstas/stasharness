@@ -59,5 +59,10 @@ template:
                 - name: var1
                   type: String
                   value: <+input>
+    variables:
+      - name: var2
+        type: String
+        description: ""
+        value: <+input>
   identifier: PT_Propagate
   versionLabel: v1
