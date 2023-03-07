@@ -44,5 +44,10 @@ template:
             - AllErrors
           action:
             type: StageRollback
+    variables:
+      - name: avc
+        type: String
+        description: ""
+        value: <+input>
   identifier: Stage_Template
   versionLabel: v1
