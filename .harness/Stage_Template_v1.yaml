@@ -31,6 +31,12 @@ template:
                 environmentVariables: []
                 outputVariables: []
               timeout: 10m
+          - step:
+              name: jira
+              identifier: jira
+              template:
+                templateRef: account.jiraaproval
+                versionLabel: version1
         rollbackSteps: []
     failureStrategies:
       - onFailure:
