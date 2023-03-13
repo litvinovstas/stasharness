@@ -1,0 +1,13 @@
+pipeline:
+  name: Git test template
+  identifier: Git_test_template
+  projectIdentifier: Ashwin_svc_env
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: asd
+        identifier: asd
+        template:
+          templateRef: no_inputs
+          versionLabel: v1
