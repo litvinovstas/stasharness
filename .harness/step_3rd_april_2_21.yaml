@@ -1,0 +1,20 @@
+template:
+  name: step 3rd april 2
+  identifier: step_3rd_april_2
+  versionLabel: "21"
+  type: Step
+  projectIdentifier: Samarth_testing
+  orgIdentifier: default
+  tags: {}
+  spec:
+    timeout: 10m
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: some other branch
+      environmentVariables: []
+      outputVariables: []
