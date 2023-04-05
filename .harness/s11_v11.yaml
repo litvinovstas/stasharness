@@ -1,0 +1,11 @@
+template:
+  name: s11
+  identifier: s11
+  versionLabel: v11
+  type: StepGroup
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    stageType: Deployment
+    steps: []
