@@ -5,7 +5,8 @@ template:
   type: StepGroup
   projectIdentifier: viniciusTest
   orgIdentifier: NgTriggersOrg
-  tags: {}
+  tags:
+    tag1: ""
   spec:
     stageType: Deployment
     steps: []
