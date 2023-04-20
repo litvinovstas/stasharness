@@ -1,0 +1,16 @@
+template:
+  name: cf3
+  identifier: cf3
+  versionLabel: v2
+  type: Step
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    type: DeleteStack
+    timeout: 10m
+    spec:
+      configuration:
+        type: Inherited
+        spec:
+          provisionerIdentifier: asdd2a
