@@ -1,0 +1,22 @@
+template:
+  name: cf4
+  identifier: cf4
+  versionLabel: v2
+  type: Step
+  projectIdentifier: viniciusTest
+  orgIdentifier: NgTriggersOrg
+  tags: {}
+  spec:
+    type: CreateStack
+    timeout: 10m
+    spec:
+      configuration:
+        stackName: <+input>
+        templateFile:
+          type: Inline
+          spec:
+            templateBody: " dad adasda asdas 123123 dasd"
+        roleArn: ""
+        connectorRef: aws
+        region: eu-west-1
+      provisionerIdentifier: das
