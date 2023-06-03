@@ -37,6 +37,11 @@ template:
               template:
                 templateRef: account.jiraaproval
                 versionLabel: version1
+                templateInputs:
+                  type: JiraApproval
+                  spec:
+                    connectorRef: <+input>
+                    issueKey: <+input>.default(story).allowedValues(test,story)
         rollbackSteps: []
     failureStrategies:
       - onFailure:
